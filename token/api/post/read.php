@@ -16,6 +16,7 @@
 
   // Blog post query
   $result = $post->read();
+  
   // Get row count
   $num = $result->rowCount();
 
@@ -23,20 +24,21 @@
   if($num > 0) {
     // Post array
     $posts_arr = array();
-    // $posts_arr['data'] = array();
+    //$posts_arr['data'] = array();
 
     while($row = $result->fetch(PDO::FETCH_ASSOC)) {
       extract($row);
 
       $post_item = array(
         'id' => $id,
-        'title' => $title,
-        'body' => html_entity_decode($body),
-        'author' => $author,
-        'category_id' => $category_id,
-        'category_name' => $category_name
+        'firstname' => $firstname,
+        'lastname' => $lastname,
+        'email' => $email,
+        'tokenlive' => $tokenlive,
+        'tokenvod' => $tokenvod,
+        'reg_date' => $reg_date
       );
-
+      
       // Push to "data"
       array_push($posts_arr, $post_item);
       // array_push($posts_arr['data'], $post_item);
@@ -48,6 +50,6 @@
   } else {
     // No Posts
     echo json_encode(
-      array('message' => 'No Posts Found')
+      array('message' => 'No Data')
     );
   }
