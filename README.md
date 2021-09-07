@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # PHP REST API
 
 > This is a simple PHP REST API from scratch with no framework.
@@ -20,3 +21,7 @@ Brad Traversy
 ### License
 
 This project is licensed under the MIT License
+=======
+# apiToken
+API based token for AMD
+>>>>>>> 7cbf810f06c25da8ff05c40e4a5199a9e3906922
